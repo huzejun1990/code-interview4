@@ -10,9 +10,12 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class App {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
+        SpringApplication application = new SpringApplication(App.class);
+        application.run(args);
+
+/*        ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
         //属性不是打印出去
- /*       String applicationName = context.getEnvironment().getProperty("applicationName");
+        String applicationName = context.getEnvironment().getProperty("applicationName");
         System.out.println(applicationName);*/
 
 /*        //AnnotationConfigServletWebServerApplicationContext //最终得到的容器实例
@@ -27,7 +30,7 @@ public class App {
         System.out.println(userBdf.getClass());
         System.out.println(aaBdfs.getClass());*/
 
-        System.out.println(context.getBean("teacher"));
+//        System.out.println(context.getBean("teacher"));
     }
 
 }
